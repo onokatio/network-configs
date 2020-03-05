@@ -1,0 +1,11 @@
+stp mode disable
+syslog facility 23
+time auto server 133.243.238.163 sntp
+time zone 0900
+storage setup mode disable
+consoleinfo autologout 8h
+telnetinfo autologout 5m
+dumpswitch disable
+loopdetect use on
+terminal pager enable
+alias history "show logging command brief"
