@@ -1,7 +1,7 @@
 ! NEC Portable Internetwork Core Operating System Software
 ! IX Series IX3100 (magellan-sec) Software, Version 10.5.13, RELEASE SOFTWARE
 ! Compiled Mar 26-Fri-2021 14:04:31 JST #2
-! Last updated Oct 03-Sun-2021 22:59:22 JST
+! Last updated Oct 03-Sun-2021 23:17:22 JST
 !
 hostname Router
 timezone +09 00
@@ -85,7 +85,7 @@ ipv6 dhcp client-profile dhcpv6fromngn
   option-request dns-servers
   option-request ntp-servers
   ia-pd subscriber GigaEthernet0.0 ::1:0:0:0:1/64
-  ia-pd subscriber GigaEthernet3.0 ::/64 eui-64
+  ia-pd subscriber GigaEthernet3.0 ::2:0:0:0:1/64
 !
 ipv6 dhcp client-profile openadjp
   option-request dns-servers
@@ -138,6 +138,7 @@ interface GigaEthernet3.0
   ipv6 dhcp server dhcpv6-sv
   ipv6 nd ra enable
   ipv6 nd ra other-config-flag
+  ipv6 nd ra dns-server 2409:11:c4a0:1502::1 1800
   no shutdown
 !
 interface GigaEthernet0.1
