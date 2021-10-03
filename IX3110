@@ -1,7 +1,10 @@
 ! NEC Portable Internetwork Core Operating System Software
 ! IX Series IX3100 (magellan-sec) Software, Version 10.5.13, RELEASE SOFTWARE
 ! Compiled Mar 26-Fri-2021 14:04:31 JST #2
-! Last updated Oct 03-Sun-2021 23:17:22 JST
+! Last updated Oct 03-Sun-2021 23:27:20 JST
+!
+service password-encryption
+service ssl-protocol tls1.2-and-later
 !
 hostname Router
 timezone +09 00
@@ -68,15 +71,15 @@ ddns enable
 !
 ppp profile flets-square
   authentication myname guest@v4flets-east.jp
-  authentication password guest@v4flets-east.jp guest
+  authentication secret-password 1 guest@v4flets-east.jp MtT15poDUt2v
 !
 ppp profile openadjp
   authentication myname open@open.ad.jp
-  authentication password open@open.ad.jp open
+  authentication secret-password 1 open@open.ad.jp 27!LUVhp0afv
 !
 ppp profile squareflets-square
   authentication myname guest@flets
-  authentication password guest@flets guest
+  authentication secret-password 1 guest@flets MtT15poDUt2v
 !
 ip dhcp profile lan1
   dns-server 192.168.1.1
